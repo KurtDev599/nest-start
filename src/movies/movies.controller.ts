@@ -42,10 +42,6 @@ export class MoviesController {
 
   @Put('/:id')
   updateMovie(@Param('id') id: string, @Body() updateData) {
-    console.log(updateData);
-    return {
-      updateData: id,
-      ...updateData,
-    };
+    return this.movieService.updateMovie(id, updateData);
   }
 }
